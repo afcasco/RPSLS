@@ -1,7 +1,6 @@
 package app.game;
 
 import app.model.Game;
-import app.game.GameController;
 import app.utils.IOUtils;
 
 public class Main {

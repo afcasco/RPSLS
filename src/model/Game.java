@@ -7,9 +7,8 @@ public abstract class Game {
      * players: {"CPU","?"}
      * outcome: {int,int,int} 0: rounds won by cpu
      * 1: rounds won by player, 2: rounds ended in draw
-     * gameType 1 for rock/paper/scissors 2 for rock paper scissors lizard spock
      **/
-    private final static String[] BET_OPTIONS = {"ROCK", "PAPER", "SCISSORS", "SPOCK", "LIZARD"};
+    public final static String[] BET_OPTIONS = {"ROCK", "PAPER", "SCISSORS", "SPOCK", "LIZARD"};
     private int rounds;
     private int[] outcome;
     private String playerName;
@@ -40,15 +39,13 @@ public abstract class Game {
 
     public abstract int[] getIntBets();
 
-    public String getBet(int bet) {
-        return BET_OPTIONS[bet];
-    }
-
     @Override
     public String toString() {
         return outcome[0]
                + "\t"
                + outcome[1]
+               + "\t"
+               + outcome[2]
                + "\t"
                + playerName
                + "\t"

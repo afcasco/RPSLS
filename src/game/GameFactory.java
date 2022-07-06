@@ -7,7 +7,7 @@ import app.model.RockPaperScissorsLizardSpock;
 public class GameFactory {
 
     /**
-     * Needs payer name, #rounds and gameType
+     * Instantiates a game as rockpaperscissors or rockpaperscissorslizardspock depending on gameType passed
      **/
     public Game createGame(int gameType) {
         if (gameType == 1) {

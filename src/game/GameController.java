@@ -34,10 +34,26 @@ public class GameController {
     }
 
     public int roundWinner(int[] bets) {
-        int winner = 0;
+        int winner = CPU;
+        int resultat = Math.abs(bets[CPU] - bets[PLAYER]) % 2;
+        if (resultat == 0) {
+            if (bets[CPU] == bets[PLAYER]) {
+                winner = DRAW;
+            } else if (bets[CPU] >= bets[PLAYER]) {
+                winner = PLAYER;
+            }
+        } else if (bets[CPU] <= bets[PLAYER]) {
+            winner = PLAYER;
+        }
+        System.out.println("CPU TOOK: " + Game.BET_OPTIONS[bets[CPU]]);
+        System.out.println("PLAYER TOOK: " + Game.BET_OPTIONS[bets[PLAYER]]);
+        switch (winner) {
+            case 0 -> System.out.println("WINNER IS CPU");
+            case 1 -> System.out.println("WINNER IS PLAYER");
+            case 2 -> System.out.println("IT'S A DRAW");
+        }
         return winner;
     }
-
 
     public void showGameResults(Game game) {
         System.out.println(game);
