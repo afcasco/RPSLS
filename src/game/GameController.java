@@ -10,13 +10,12 @@ public class GameController {
     private static final int DRAW = 2;
 
     // creates and plays one game for given number of rounds
-    public Game playGame(Game game) {
+    public void playGame(Game game) {
 
         for (int i = 0; i < game.getRounds(); i++) {
             int[] bets = game.getIntBets();
             game.updateOutcome(roundWinner(bets));
         }
-        return game;
     }
 
     // creates a new game using a game factory
@@ -45,8 +44,10 @@ public class GameController {
         } else if (bets[CPU] <= bets[PLAYER]) {
             winner = PLAYER;
         }
-        System.out.println("CPU TOOK: " + Game.BET_OPTIONS[bets[CPU]]);
-        System.out.println("PLAYER TOOK: " + Game.BET_OPTIONS[bets[PLAYER]]);
+        //System.out.println("CPU TOOK: " + Game.BET_OPTIONS[bets[CPU]]);
+        System.out.println("CPU TOOK: " + Bets.values()[bets[CPU]]);
+        System.out.println("PLAYER TOOK: " + Bets.values()[bets[PLAYER]]);
+        //System.out.println("PLAYER TOOK: " + Game.BET_OPTIONS[bets[PLAYER]]);
         switch (winner) {
             case 0 -> System.out.println("WINNER IS CPU");
             case 1 -> System.out.println("WINNER IS PLAYER");
@@ -57,5 +58,9 @@ public class GameController {
 
     public void showGameResults(Game game) {
         System.out.println(game);
+    }
+
+    private enum Bets {
+        ROCK, PAPER, SCISSORS, SPOCK, LIZARD
     }
 }

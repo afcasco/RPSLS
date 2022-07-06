@@ -12,8 +12,7 @@ public class RockPaperScissors extends Game {
     public int[] getIntBets() {
         Random random = new Random();
         int cpuBet = random.nextInt(BETS);
-        int playerBet = IOUtils.getInteger("Make a bet: " +
-                                           "0.ROCK, 1.PAPER, 2.SCISSORS");
+        int playerBet = IOUtils.getInteger("Make a bet: " + "0.ROCK, 1.PAPER, 2.SCISSORS");
         return new int[]{cpuBet, playerBet};
     }
 }
