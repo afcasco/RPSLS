@@ -3,6 +3,7 @@ package app.game;
 import app.model.Game;
 import app.utils.IOUtils;
 
+// Main class
 public class Main {
     public static void main(String[] args) {
 
